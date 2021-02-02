@@ -1,0 +1,20 @@
+*
+{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+.pay-form-bx
+{
+    background: rgba(255,255,255,0.05);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.8);
+    border-radius:15px ;
+    height: 80vh;
+}
+
+.pay-section
+{
+    background: #161623;
+    height: 100vh;
+}

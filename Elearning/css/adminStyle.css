@@ -1,0 +1,122 @@
+*
+{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header
+{
+    position:fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: #161623;
+    padding: 10px 40px;
+    z-index: 100;
+}
+
+header .logo 
+{
+    font-size: 2.5em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+    font-family: joker;
+    text-decoration: none;
+    cursor: pointer;
+    
+}
+
+.toggleMenu
+{
+   width: 40px;
+   height: 30px;
+   color: #fff;
+   
+}
+
+.toggleMenu img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.admin-section
+{
+    position: relative;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    left: 0;
+    top: 60px;
+    /* padding: 20px 0; */
+    height: 100vh;
+}
+
+.dash-board
+{   
+    position: fixed;
+    background: yellowgreen;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 100vh;
+}
+
+.dash-board h3
+{
+    background-color: #13133d;
+    color: #fff;
+    width: 100%;
+    padding: 10px 20px;
+    font-family: joker;
+}
+
+.dash-board .admin-menu li
+{
+    padding: 10px 20px;
+}
+
+.dash-board .admin-menu li a
+{
+    color: #333;
+    text-decoration: none;
+}
+
+.course-heading
+{   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-right: 20px;
+    padding: 10px 0;
+    background: #fff;
+}
+.table
+{
+    width: 98%;
+}
+
+.course-heading
+{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 98%;
+   padding: 10px;
+}
+
+.course-heading h2{
+
+    /* color: #fff; */
+    font-size: 2.5em;
+    font-weight: 500;
+}
+

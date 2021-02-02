@@ -1,0 +1,439 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+.navbar
+{
+   background: transparent !important;
+   padding:40px 0;
+   transition: 0.5s;
+}
+
+.navbar.sticky
+{
+   background: #161623 !important;
+   padding:10px 0;
+}
+
+.navbar .logo
+{
+  padding-left: 20px;
+  font-size: 2em;
+  font-weight: 800;
+}
+
+.navbar .logo span
+{
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.8);
+}
+
+.aknav
+{
+    color: #fff !important;
+    font-weight: 500;
+}
+
+.aknav:hover
+{
+   color: #000 !important;
+   background: #fff !important;
+}
+
+.banner
+{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.banner .banner-video
+{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.overlay
+{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:#0873e6;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.banner-content
+{
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+}
+
+.banner-content h2
+{
+    font-size: 4em;
+    font-weight: 600;
+    color: #fff;
+    
+}
+
+.banner-content h3
+{
+    font-size: 2em;
+    color: rgba(255,255,255,1);
+}
+
+.banner-content .banner-btn
+{
+    background: #000;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.banner-bottom
+{
+    background: #000;
+}
+
+.banner-bottom .banner-bottom-content
+{
+    padding: 10px;
+
+}
+
+.banner-bottom .banner-bottom-content h5
+{
+    font-size: 20px;
+    font-weight: 300;
+   
+}
+
+.banner-bottom .banner-bottom-content .banner-bottom-content-tab
+{
+    text-align: center;
+    transition: 0.3s;
+}
+
+ .banner-bottom .banner-bottom-content .banner-bottom-content-tab:hover 
+ {
+     background: rgba(212, 12, 12, 0.8);
+     box-shadow: 0 0 20px red;
+               
+ }
+
+ .banner-bottom .banner-bottom-content .banner-bottom-content-tab:hover h5
+ {
+    font-weight: 500;
+     
+ }
+
+ .headingtxt
+ {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+ }
+
+ .headingtxt h2
+ {
+     font-size: 3em;
+     font-weight: 600;
+     color: #fff;
+     padding: 20px;
+     font-family: joker;
+ }
+
+ .card-btn
+ {
+     background: #000;
+     color: #fff;
+     transition: 0.3s;
+     font-size: 16px;
+ }
+
+ .card-btn:hover
+ {
+     background: #0873e6;
+     color: #fff;
+ }
+
+
+
+  #contact
+  {
+     position: relative;
+     background: url(../media/contact.jpg);
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center;
+     margin: 0;
+     padding: 0;
+  }
+
+
+
+ .contactinfo
+ {
+     position: relative;
+     left: 0;
+     padding: 80px 40px;
+     display: flex;
+     flex-direction: column;
+     width: 100%;  
+     height: 590px;
+     
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    background: rgba(255,255,255,0.05);
+   backdrop-filter: blur(10px);
+ }
+
+.contactinfo .infobx
+{
+    position: relative;
+    left: 0;
+    top: 0;
+   padding: 20px;
+   display: flex;
+   text-align: start;
+}
+
+.infobx a
+{
+    position: relative;
+    top: -19px;
+    color: #fff;
+    font-size: 40px;
+    margin-right: 20px;
+    transition: 0.3s;
+}
+
+.infobx a:hover
+{
+    color: #e90a72;
+}
+
+.infobx h3
+{
+   
+   font-size: 22px;
+   color: #fff;
+}
+
+.contactform
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 40px 20px;
+    margin-right: 20px;
+   box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+   background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+}
+
+.contactform form
+{
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   
+}
+
+.contactform .inputbx
+{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.contactform .inputbx label
+{
+   color: #fff;
+   font-size: 20px;
+   font-weight: 300;
+}
+
+.contactform .inputbx input,
+.contactform .inputbx textarea
+{
+    width: 80%;
+    border: none;
+    background: transparent;
+    border-bottom: 4px solid #0873e6;
+    font-size: 16px;
+    padding: 10px;
+    outline: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.contactform .inputbx textarea
+{
+    min-height: 120px;
+    resize: none;
+    
+}
+
+.contactform .inputbx input:focus,
+.contactform .inputbx textarea:focus
+{
+    background: #333;
+    color: #fff;
+}
+
+
+
+.contactform .inputbx input[type = "submit"]
+{
+    position:relative;
+    cursor:pointer;
+    background:#0873e6;
+    color:#fff;
+    border:none;
+    max-width:150px;
+    padding:12px;
+    transition: 0.3s;
+}
+
+.contactform .inputbx input[type = "submit"]:hover
+{
+    background:#fff;
+    color: #000;
+}
+
+.feedback-imgbx
+{   
+    position: relative;
+    left: 5px;
+    background: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+}
+
+.feedback-name
+{
+    position: relative;
+    right: 0;
+    color: #000;
+    margin-left: 30px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 300;
+    font-family: sans-serif;
+}
+.feedback-name span
+{
+    font-size: 12px;
+}
+
+
+
+@media (min-width: 576px)
+{
+.card-deck {
+   
+    justify-content: center;
+}
+}
+#footer
+{
+    background: #021c38;
+    
+}
+
+.footer-section
+{
+    position: relative;
+    padding: 20px;
+    width: 100%;
+    background: transparent;
+}
+
+.footer-content
+{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content p
+{
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.footer-content a
+{
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.footer-content a:hover
+{
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px #fff ;
+}
+
+#adminLog-btn
+{
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+#adminLog-btn:hover
+{
+   color: yellow !important;
+   text-shadow: 0 0 10px #fff;
+}
+
+
+/* css of   paymen.php  start  */
+ 
+
+/* css of   course.php  start  */
+.add-course-btn
+{
+    position: relative;
+    bottom: auto;
+    right: -1200px;
+    width: 60px;
+    height: 60px;
+    z-index: 100;
+}
+
+.add-course-btn a
+{
+    width: 100%;
+    background: red;
+}
