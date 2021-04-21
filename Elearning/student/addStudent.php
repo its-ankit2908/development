@@ -15,7 +15,11 @@ if(isset($_POST['checkemail']) && isset($_POST['stuRegEmail']))
      
     $sql ="SELECT stuRegEmail From student WHERE stuRegEmail = '".$stuRegEmail."' ";
 
-    
+     
+
+
+
+
 
     // $result = $conn->query($sql);
     $result= $conn->query($sql);
@@ -42,11 +46,23 @@ $stuName = $_POST['stuRegName'];
 $stuEmail = $_POST['stuRegEmail'];
 $stuPass = $_POST['stuRegPass'];
 
+$hashPass = password_hash($stuPass,PASSWORD_BCRYPT);
 
 
-$sql = "INSERT INTO student(stuRegName,stuRegEmail,stuRegPass) values('$stuName','$stuEmail','$stuPass')";
+$sql = "INSERT INTO student(stuRegName,stuRegEmail,stuRegPass) values('$stuName','$stuEmail','$hashPass')";
 
 if($conn->query($sql) == TRUE){
+    
+    $to_email = $stuEmail;
+    $subject = "Registered Successfully";
+    $body = "Welcome to  the Ankit E-learning Portal";
+    $headers = "From: sender email";
+    
+
+    mail($to_email, $subject, $body, $headers);
+    
+
+
     echo json_encode("OK");
 }else{
     echo json_encode("Failed");
@@ -64,15 +80,23 @@ if(isset($_POST['checklogemail']) && isset($_POST['stuLogEmail']) && isset( $_PO
     $stuLogEmail = $_POST['stuLogEmail'];
     $stuLogPass = $_POST['stuLogPass'];
 
-    $sql = "SELECT stuRegEmail,stuRegPass FROM student WHERE stuRegEmail = '".$stuLogEmail."' AND stuRegPass = '".$stuLogPass."'  ";
+    
+
+    $sql = "SELECT stuRegEmail,stuRegPass FROM student WHERE stuRegEmail = '".$stuLogEmail."' ";
    
     $result = $conn->query($sql);
     $row = $result->num_rows;
-    if($row == 1)
+    
+    $pass = $result->fetch_assoc();
+
+
+    $checkPass = password_verify($stuLogPass,$pass['stuRegPass']);
+    
+    if($row == 1  && $checkPass)
     {  
         $_SESSION['is_login'] = true;
         $_SESSION['stuLogEmail'] = $stuLogEmail;
-        echo json_encode($row);
+        echo json_encode($row); 
 
     }
     else if($row == 0)

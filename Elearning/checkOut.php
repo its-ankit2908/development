@@ -4,7 +4,13 @@
      session_start();
    }
    
-   $_SESSION['stuEmail'] = $_SESSION['stuLogEmail'];
+   
+   
+    
+     $_SESSION['stuEmail'] = $_SESSION['stuLogEmail'];
+   
+
+
    $_SESSION['c_id'] = $_SESSION['course_id'];
 
 	header("Pragma: no-cache");

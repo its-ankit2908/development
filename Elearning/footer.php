@@ -3,7 +3,7 @@
 <!-- footer section start -->
 <footer id="footer" class="container-fluid">
         
-        <div class="row banner-bottom-content bg-danger" >
+        <!-- <div class="row banner-bottom-content bg-danger" >
             <div class="col-sm-3 banner-bottom-content-tab">
                 <h5 class="text-white"><i class="fa fa-facebook mr-3" aria-hidden="true"></i>Facebook</h5>
             </div>
@@ -19,7 +19,7 @@
             <div class="col-sm-3 banner-bottom-content-tab">
                 <h5 class="text-white"><i class="fa fa-instagram mr-3" aria-hidden="true"></i>Instagram</h5>
             </div>
-        </div>
+        </div> -->
 
      <div class="row footer-section">
             
@@ -203,7 +203,29 @@
  <script src="./js/style.js"></script>
  <script src="./js/ajaxRequest.js"></script>
  <script src="./js/adminAjaxRequest.js"></script>
-
-
+ <script src="./js/contactReq.js"></script>
+ <script src="./js/searchRequest.js"></script>
+ 
+ <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+          effect: 'coverflow',
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: 'auto',
+          coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          },
+        //   pagination: {
+        //     el: '.swiper-pagination',
+        //   },
+          loop:true,
+        });
+      </script>
+    
 </body>
 </html>

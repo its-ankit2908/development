@@ -1,6 +1,20 @@
+
+
 <?php 
  
 include_once('./db_connection.php');
+
+$course_name = $_POST['search_course'];
+
+$sql = "SELECT * from course where course_name = '$course_name' ";
+
+$result = $conn->query($sql);
+
+$course = $result->fetch_assoc();
+
+
+
+
 ?>
 
 
@@ -13,6 +27,10 @@ include_once('./db_connection.php');
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/course.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.1/css/all.min.css" 
+    integrity="sha512-9my9Mb2+0YO+I4PUCSwUYO7sEK21Y0STBAiFEYoWtd2VzLEZZ4QARDrZ30hdM1GlioHJ8o8cWQiy8IAb1hy/Hg==" crossorigin="anonymous" />
+   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <title>Courses</title>
@@ -33,10 +51,10 @@ include_once('./db_connection.php');
  <!-- course details  section start -->
    <div class="container-fluid course-detail-section">
         <?php 
-          if(isset($_POST['courseId']))
+          if(isset($course['course_id']))
           {
-            $_SESSION['course_id'] = $_POST['courseId'];
-           $sql ="SELECT * FROM course where course_id = {$_POST['courseId']}";
+            $_SESSION['course_id'] = $course['course_id'];
+           $sql ="SELECT * FROM course where course_id = {$course['course_id']}";
            $result = $conn->query($sql);
            $row = $result->fetch_assoc();
            $img = str_replace('..','.',$row['course_img'])  ;
@@ -69,7 +87,7 @@ include_once('./db_connection.php');
            </div>
            <?php 
            
-           $sql = "SELECT * from lesson WHERE course_id = {$_POST['courseId']}"; 
+           $sql = "SELECT * from lesson WHERE course_id = {$course['course_id']}"; 
            $result = $conn->query($sql);
            
            ?>

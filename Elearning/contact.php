@@ -1,4 +1,7 @@
-<section class="container-fluid" id="contact">
+<section class="container-fluid contact" id="contact" style="background: url(./media/coursebanner.jpg); background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center;
+     background-attachment: fixed;">
         <div class="row">
             <div class="col-sm-12">
                 <div class="headingtxt">
@@ -10,8 +13,8 @@
  
 
         <div class="row">
-            <div class="col-sm-6">
-                <div class="contactinfo">
+            <div class="col-sm-6 mb-3">
+                <div class="contactinfo shadow-lg">
                     
                     <div class="infobx">
                          <a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
@@ -31,33 +34,34 @@
                 </div>
             </div>
 
-            <div class="col-sm-6">
+            <div class="col-sm-6 mb-3">
 
-                <div class="contactform">
-                    <form action=""  name="contact">
+                <div class="contactform shadow-lg">
+                    <form action=""  name="contact" id="contactForm" >
                       <div class="inputbx">
                             <label for="name">Name: </label>
-                            <input type="text" name="name">
+                            <input type="text" name="contact_name" id="contact_name" autocomplete="off">
                         </div>
                     
                         <div class="inputbx">
                             <label for="subject">Subject: </label>
-                            <input type="text" name="subject">
+                            <input type="text" name="contact_subject" id="contact_subject" autocomplete="off">
                         </div>
 
                         <div class="inputbx">
                             <label for="email">E-mail: </label>
-                            <input type="email" name="email">
+                            <input type="email" name="contact_email" id="contact_email" autocomplete="off">
                         </div>
 
                         <div class="inputbx">
                             <label for="message">Message: </label>
-                            <textarea name="msg"></textarea>
+                            <textarea name="contact_msg" id="contact_msg"></textarea>
                         </div>
 
                         <div class="inputbx">
-                            <input type="submit" value="Send" name="send">
+                           <button type="button" class="contact-btn" onclick ="addContact()" >Send</button>
                         </div>
+                        <div class="w-100" id="contact-msg"></div>
                     </form>
                 </div>
             </div>

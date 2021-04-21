@@ -160,3 +160,15 @@ function checkUserLogin()
     })
 
 }
+
+
+
+
+// for contact submission 
+
+
+function addContact(){
+
+console.log("contact clicked");
+
+}

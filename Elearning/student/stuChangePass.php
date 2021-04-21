@@ -28,9 +28,11 @@
     {
        
        $stu_pass = $_REQUEST['stu_pass'];
+
+       $stu_hash = password_hash($stu_pass,PASSWORD_BCRYPT);
      
        
-       $sql ="UPDATE student SET stuRegPass = '$stu_pass' WHERE stuRegEmail ='$stuEmail' ";
+       $sql ="UPDATE student SET stuRegPass = '$stu_hash' WHERE stuRegEmail ='$stuEmail' ";
       
       if($conn->query($sql) == TRUE)
       {

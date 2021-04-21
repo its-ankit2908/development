@@ -1,12 +1,14 @@
 <?php   
-  // if(!isset($_SESSION['is_login']))
+
+  // if(!isset($_SESSION['is_login']) || !isset($_SESSION['user_email_address'])   )
   // {
-  //   session_start();
+  //     session_start();
   // }  
 
   include_once('./db_connection.php');
 
 ?>
+
 
 
 
@@ -17,19 +19,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.1/css/all.min.css" 
+    integrity="sha512-9my9Mb2+0YO+I4PUCSwUYO7sEK21Y0STBAiFEYoWtd2VzLEZZ4QARDrZ30hdM1GlioHJ8o8cWQiy8IAb1hy/Hg==" crossorigin="anonymous" />
+   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <title>E-Learning</title>
+    <style>
+       .contact:before
+       {
+         position:absolute;
+         width:100%;
+         height:100%;
+         background: linear-gradient(rgba(0,0,0,0.15),#fff);          
+        }
+
+        
+#offer-zone-btn
+{
+    animation: offer 2s ease-in-out infinite;
+    opacity: 0 !important;
+    color:#fff;
+    background:none;
+    
+}
+
+#offer-zone-btn:hover 
+{
+   background:#fff;
+   color:#000;
+   animation:none;
+   opacity: 1 !important;
+  }
+
+@keyframes offer
+{
+    0,100%
+    {
+        opacity: 0;
+    }
+    50%
+    {
+        opacity: 1;
+    }
+
+}
+
+
+      
+    </style>
 </head>
 <body>
 
     <!-- navbar start -->
       <?php  
           include('header.php');
-           
       ?>
 
     <!-- navbar end -->
+
+    <!-- google auth login  -->
+     
+
+
+
+
 
 
     <!-- banner start -->
@@ -38,9 +95,9 @@
         <video class="banner-video" src="./media/Pexels Videos 1580507.mp4 " autoplay muted loop></video>
         <div class="overlay"></div>
 
-        <div class="banner-content">
-            <h2>Welocome To iSchool</h2>
-            <h3>Learn And Explore Yourself</h3>
+        <div class="banner-content" >
+            <h2 class="text-layers">Welocome To iSchool</h2>
+            <h3 class="text-layers">Learn And Explore Yourself</h3>
            <?php 
              if(isset($_SESSION['is_login']))
              {
@@ -51,16 +108,54 @@
                 echo '<a href="#" class="btn banner-btn" data-toggle="modal" data-target="#stuRegModal" >Get Started</a>';
              }
            
-           
+        
            ?>
 
-            
         </div>
 
      </div>
-
-    
     <!-- banner end -->
+     
+     <div class="container-fluid about-page">
+       
+       <div class="container">
+             <div class="row">
+                  <div class="col-sm-12">
+                      <div class="headingtxt">
+                          <h2 style="color:#000; text-shadow:10px 10px 35px rgba(0,0,0,0.15); letter-spacing:4px;  " >Popular Courses</h2>
+                      </div>
+                  </div>
+              </div>
+               <br><br>
+
+             <div class="row mb-5">
+               
+               <div class="col-md-6 col-sm-12 mb-sm-3 d-flex align-items-center">
+                   <div class="about-content">
+                      <p  style="font-size:1.2rem;" class="text-black-50">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum totam vel vero ipsa 
+                      maiores ex repellendus voluptatem alias ea aspernatur, quidem ipsum cupiditate doloribus 
+                      reiciendis illo odit consequatur nobis, laudantium saepe hic! Harum atque voluptas vel 
+                      blanditiis exercitationem molestiae deleniti autem possimus nobis? Mollitia accusamus 
+                      ea voluptatibus libero vitae possimus?</p>
+                   
+                   </div>
+                  
+               </div>
+               <div class="col-md-6 col-sm-12 mb-sm-3 shadow-lg m-0 p-0">
+                   
+                      <img src="./media/online-1.jpg" alt="" class="img-fluid">
+                   
+                  
+               </div>
+             
+             
+             
+             </div>  
+       </div>
+     
+     </div>
+
+
     <!-- banner bottom footer -->
      <div class="container-fluid banner-bottom">
 
@@ -87,13 +182,13 @@
 
     <!-- course section start  -->
 
-      <section id="course" class="pb-5">
+      <section id="course" class="pb-5" style="background: rgb(236, 231, 231)" >
           <div class="container">
             
             <div class="row">
                   <div class="col-sm-12">
                       <div class="headingtxt">
-                          <h2>Popular Courses</h2>
+                          <h2 style="color:#000; text-shadow:10px 10px 35px rgba(0,0,0,0.15); letter-spacing:4px;  " >Popular Courses</h2>
                       </div>
                   </div>
               </div>
@@ -113,7 +208,7 @@
                       $img = str_replace('..','.',$row['course_img'])  ;
                    
                  ?>
-                    <div class="card mb-3" style="max-width:18rem;"  >   <!-- card -->
+                    <div class="card mb-3 shadow-lg" style="max-width:18rem;"  >   <!-- card -->
                       <img src="<?php echo $img; ?>" class="card-img-top" alt="" width="300" height="180">
                       <div class="card-body">
                           <h3 class="card-title font-weight-bolder"><?php echo $row['course_name'];   ?></h3>
@@ -147,7 +242,7 @@
                       $img = str_replace('..','.',$row['course_img'])  ;
                    
                  ?>
-                    <div class="card mb-3" style="max-width:18rem;"  >   <!-- card -->
+                    <div class="card mb-3 shadow-lg" style="max-width:18rem;"  >   <!-- card -->
                       <img src="<?php echo $img; ?>" class="card-img-top" alt="" width="300" height="180">
                       <div class="card-body">
                           <h3 class="card-title font-weight-bolder"><?php echo $row['course_name'];   ?></h3>
@@ -192,21 +287,11 @@
 
     <!-- feedback section start -->
       
-    <section class="container-fluid bg-primary" id="feedback" >
-          
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="headingtxt">
-                    <h2>FeedBack</h2>
-                </div>
-            </div>
-        </div>
-         <br><br>
-
-         <div id = "carouselControl" class="carousel slide pb-5" data-ride="carousel">
-          <div class="carousel-inner">
+    <section class="feedback-sec" id = "feedback" >
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
               
-              <?php    
+            <?php    
                 $sql = "SELECT s.stuRegName,s.stuRegOcc,s.stuRegImg,f.stu_feed FROM student AS s JOIN feedback as f
                 ON s.stuRegEmail = f.stuRegEmail LIMIT 3";
 
@@ -216,62 +301,36 @@
                  
                 
               ?>
-                    
-                  <div class="carousel-item active">   <!-- slide 1-->          
-                     
-                      <div class="card-deck">
-
                        <?php while($row = $result->fetch_assoc()){   
                             
                             $img = str_replace('..','.',$row['stuRegImg']);
                          ?>
-                       <div class="card border-primary mb-3" style="max-width: 18rem;">
-                          <div class="card-header bg-transparent border-primary font-weight-bold ">FeedBack</div>
-                          
-                          <div class="card-body text-primary">
-                      
-                            <p class="card-text"><?php echo $row['stu_feed'] ?></p>
-                          </div>
-                          <div class="card-footer bg-transparent border-primary d-flex">
-                              <div class="feedback-imgbx d-inline mt-3 bg-white"><img src="<?php echo $img; ?>" alt="" class="img-fluid" style="border-radius:50%; object-fit:cover;"></div>
-                              <h3 class="feedback-name text-center" ><?php echo $row['stuRegName']; ?><br> <span><?php echo $row['stuRegOcc']; ?></span></h3>
-                          </div>
-                       </div>
-
-                        <?php }}?>
-                  </div>
-                </div>    <!--slide 1 end-->
 
 
-
-                <!--slide 2 start-->
-               
-                   
-                
-               
+            <div class="swiper-slide" style="max-width: 18rem;">  <!--slide start-->
+                    <div class="testimonialBox">
+                        <i class="fa fa-quote-right quote" aria-hidden="true"></i>
+                        <div class="content">
+                            <p><?php echo $row['stu_feed'] ?></p>
+                            </div>
+                        <div class="details">
+                            <div class="imgbx">
+                              <img src="<?php echo $img; ?>" alt="feed_img">
+                            </div>
+                            <h3><?php echo $row['stuRegName']; ?><br><span><?php echo $row['stuRegOcc']; ?></span></h3>
+                        </div>
+                    </div>
+              </div>  <!--slide end-->
              
-               
+             <?php }} ?> 
               
-              
-          
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
           </div>
-          
-          <a href="#carouselControl" class="carousel-control-prev" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-          </a>
-
-          <a href="#carouselControl" class="carousel-control-next" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-          </a>  
-      </div>
-
-
-        
     </section>
-
-
+    
+    
 
     <!-- feedback section end -->
 

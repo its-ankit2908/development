@@ -13,6 +13,8 @@ include_once('./db_connection.php');
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/course.css">
+    <link rel="stylesheet" href="css/search.css">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <title>Courses</title>
@@ -43,12 +45,12 @@ include_once('./db_connection.php');
                       
                       <div class="form-group text-white">
                         <i class="fa fa-envelope"></i><label for="stuLogEmail" class="pl-2 font-weight-bold">E-mail</label>
-                        <input type="email" class="form-control" placeholder="Name" name="stuLogEmail" id="stuLogEmail" required>
+                        <input type="email" class="form-control" placeholder="Name" name="stuLogEmail" id="stuLogEmail" required="true" autocomplete="off">
                         <small class="form-text">We'll never share your email with anyone else.</small>
                     </div>
                     <div class="form-group text-white">
                         <i class="fa fa-key"></i><label for="stuLogPass" class="pl-2 font-weight-bold">Password</label>
-                        <input type="text" class="form-control" placeholder="Name" name="stuLogPass" id="stuLogPass" required>
+                        <input type="text" class="form-control" placeholder="Name" name="stuLogPass" id="stuLogPass" required autocomplete="off">
                     </div>
                 </form>        
                 <span id="loginStatus" class="text-white" ></span>
@@ -68,18 +70,18 @@ include_once('./db_connection.php');
                               <div class="form-group text-white">
                                   <i class="fa fa-user"></i><label for="stuRegName" class="pl-2 font-weight-bold">Name</label>
                                   <span id = "statusMsg1"></span>
-                                  <input type="text" class="form-control" placeholder="Name" name="stuRegName" id="stuRegName" required>
+                                  <input type="text" class="form-control" placeholder="Name" name="stuRegName" id="stuRegName" autocomplete="off" required>
                               </div>
                               <div class="form-group text-white">
                                 <i class="fa fa-envelope"></i><label for="stuRegEmail" class="pl-2 font-weight-bold">E-mail</label>
                                 <span id = "statusMsg2"></span>
-                                <input type="email" class="form-control" placeholder="Name" name="stuRegEmail" id="stuRegEmail" required>
+                                <input type="email" class="form-control" placeholder="Name" name="stuRegEmail" id="stuRegEmail" autocomplete="off" required>
                                 <small class="form-text">We'll never share your email with anyone else.</small>
                             </div>
                             <div class="form-group text-white">
                                 <i class="fa fa-key"></i><label for="stuRegPass" class="pl-2 font-weight-bold">Password</label>
                                 <span id = "statusMsg3"></span>
-                                <input type="text" class="form-control" placeholder="Password" name="stuRegPass" id="stuRegPass" required>
+                                <input type="text" class="form-control" placeholder="Password" name="stuRegPass" id="stuRegPass" autocomplete="off" required>
                             </div>
 
                           </form>

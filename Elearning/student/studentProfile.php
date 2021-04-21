@@ -36,7 +36,7 @@
   </head>
   <body>
     <header>
-      <a href="#" class="logo">E-Learning.</a>
+      <a href="../index.php" class="logo">E-Learning.</a>
     </header>
     
     <section class="container-fluid student-section">
@@ -44,11 +44,20 @@
         <div class="col-sm-3 position-fixed">
            <div class="stu-dashboard">
              <div class="stu-img">
-               <!-- <img src="" alt=""> -->
+             <?php    
+                    $sql = "select stuRegImg from student where stuRegEmail = '$stuEmail' ";
+
+                    $result =  $conn->query($sql);
+                    
+                     $row = $result->fetch_assoc();
+
+                    ?>
+                    
+                    <img src="<?php echo $row['stuRegImg'] ?>" alt="">
              </div>
              <ul class="stu-menu">
                <li><a href="./updateProfile.php"><i class="fa fa-user pr-2" aria-hidden="true"></i>Update Profile</a></li>
-               <li><a href=""><i class="fa fa-book pr-2" aria-hidden="true"></i>My Courses</a></li>
+               <li><a href="./myCourse.php"><i class="fa fa-book pr-2" aria-hidden="true"></i>My Courses</a></li>
                <li><a href="./stuFeedback.php"><i class="fa fa-comments pr-2" aria-hidden="true"></i>Feedback</a></li>
                <li><a href="./stuChangePass.php"><i class="fa fa-unlock pr-2" aria-hidden="true"></i>Change Password</a></li>
                <li><a href="../logout.php"><i class="fa fa-sign-out pr-2" aria-hidden="true"></i>Logout</a></li>

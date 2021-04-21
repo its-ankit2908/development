@@ -103,6 +103,8 @@
             <?php 
               $start_date = $_POST['start_date'];
               $end_date = $_POST['end_date'];
+              if( $start_date != '' && $end_date != '' ){
+
              $sql = "SELECT * from courseorder WHERE order_date BETWEEN '$start_date' AND '$end_date'";
              $result = $conn->query($sql);
              if($result->num_rows >0){
@@ -117,7 +119,7 @@
                     <td><?php echo $row['amount']; ?></td>
                 </tr>
                 <?php  }
-             }  
+             } } 
             ?>
             </tbody>
           </table>
