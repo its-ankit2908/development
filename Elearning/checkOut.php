@@ -4,7 +4,7 @@
      session_start();
    }
    
-   
+    session_start();  
    
     
      $_SESSION['stuEmail'] = $_SESSION['stuLogEmail'];
